@@ -1,0 +1,3 @@
+#Non permettere il caricamento di specifici tipi di file
+RewriteEngine on
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp|exe|swf|json)$ - [F,NC]
