@@ -6,9 +6,6 @@ class Projects extends Main
     function __construct() {
         parent::__construct("Projects", "projects");
         // $this->setDeletable(true);
-        $this->plural_label = 'Progetti';
-        $this->add_label = 'Nuovo Prodotto';
-        $this->single_label = 'Prodotto';
 
 
         

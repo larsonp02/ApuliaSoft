@@ -8,8 +8,8 @@ body{
 .nav {
   padding: 10px;
 }
-.navbar-brand{
-    color: #fff;
+.navbar a{
+    color: #fff!important;
 }
 .navbar-brand:hover{
     color: #fff;
@@ -42,3 +42,7 @@ body{
     margin-top:5%;
 }
 
+.navbar.center {
+    text-align: center!important;
+    padding-left: 40%;
+}

@@ -27,14 +27,14 @@ class Main
     public $canView;
     public $canAdd;
     public $isDeletable;
-    public $single_label;
+    public $external_field;
     public $plural_label;
     public $add_label;
     
 
     function __construct($name, $table) {
         $this->name = $name;
-        $this->single_label = $name;
+        $this->external_field = 'name';
         $this->plural_label = $name;
         $this->add_label = $name;
         $this->table = $table; 
@@ -58,8 +58,7 @@ class Main
             }
             $this->setTable_fields($temp);
             
-        }
-        
+        }        
       }
 
     public function setId(Int $id){ 

@@ -70,15 +70,6 @@ function getObjNameFromFk(String $fk){
     return str_replace("fk_", "", $fk);
 }
 
-
-
-
-function canAccess($canAccesFromCron = false){
-    if(!$canAccesFromCron && mysqli_num_rows(mysqli_query(CommonDB::$connection, "SELECT id FROM users WHERE id = ".$GLOBALS['user_info']->id." AND id IN (SELECT fk_user FROM crons)")) > 0){
-        ?><script>window.location.href='<?php echo FOLDER ?>logout.php'</script><?php
-    }
-}
-
 function datetime_format($data){
     if(strpos($data, "-") !== false){
         return date('d/m/Y', strtotime($data));

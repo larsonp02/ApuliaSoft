@@ -19,12 +19,27 @@
 
 </head>
 <body>
-    <nav class="nav bg-dark text-center">
-        <div class="container-fluid text-center">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<nav class="navbar center navbar-expand-lg bg-dark text-center">
+  <div class="container-fluid text-center">
+
+
+    <div class="collapse navbar-collapse navbar-center">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-        <a class="navbar-brand" href="">Home</a>
+          <a class="nav-link active" style="color: #fff!important" href="<?php echo MAINURL; ?>">Home</a>
         </li>
-        </ul>
-        </div>
-    </nav>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo MAINURL; ?>?object=Projects">Progetti</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo MAINURL; ?>?object=Employees">Dipendenti</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo MAINURL; ?>?object=Register">Registro</a>
+        </li>
+      </ul>
+    </div>
+
+    
+  </div>
+</nav>
