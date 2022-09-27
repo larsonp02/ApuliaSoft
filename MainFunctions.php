@@ -1,9 +1,5 @@
 <?php 
 
-function get($val){ return (isset($_GET[$val]) ? (($val == 'ref') ? hexdec($_GET[$val]) : (($val == 'param') ? fromkeys($GLOBALS['tokenizer'], $_GET[$val]) : $_GET[$val])) : ''); }
-
-function post($val){ return isset($_POST[$val]) ? $_POST[$val] : ''; }
-
 
 function getProperty($obj,$prop){ return property_exists($obj , $prop) ? $obj->$prop : ''; }
 
@@ -26,32 +22,6 @@ function checkFields($fields, $rows){
     return ((count($rows) == 0) ? true : ($result == count($fields))) ? true : false;
 }
 
-function tinyToken(){
-    $length = 25;
-    $token = '';
-    $chars = [
-                'a','A','b','B','c','C','d','D','e','E','f','F','g','G','h','H',
-                'i','I','j','J','k','K','l','L','m','M','n','N','o','O','p','P',
-                'q','Q','r','R','s','S','t','T','u','U','v','V','x','X','y','Y',
-                'z','Z','!','-','_','*','|'
-            ];
-
-    for($i = 0; $i < $length; $i++){
-        $token .= $chars[rand(0, count($chars) - 1)];
-    }
-    return $token; 
-}
-
-function fromkeys($array, $value){
-    return array_search($value, $array);
-}
-
-function setParams($obj, $id = 0){
-    $string = "param=".$GLOBALS['tokenizer'][$obj];
-    $string .= ($id > 0) ? "&ref=".dechex($id) : "";
-    return $string;
-}
-
 function array_remove(Array $array, $id, Bool $isObj = false){   
     $result = array();
     if(is_assoc($array)){
@@ -64,10 +34,6 @@ function array_remove(Array $array, $id, Bool $isObj = false){
         }
     }
     return ($isObj) ? (object)$result : $result;
-}
-
-function getObjNameFromFk(String $fk){
-    return str_replace("fk_", "", $fk);
 }
 
 function datetime_format($data){
@@ -98,11 +64,6 @@ function data_format($data, $type){
             return $data;
         break;
     }
-}
-
-function redirect($url, $getParams = false){
-    ?><script>window.location.href="<?php echo (!$getParams) ? urlencode($url) : $url ?>"</script><?php
-    die;
 }
 
 function from_dataType_to_inputType($type){

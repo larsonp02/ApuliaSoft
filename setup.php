@@ -59,11 +59,6 @@ if(isset($_POST["type_sql"])){
                 <label class="form-check-label" for="save" style="margin-left:0!important; margin-right:0!important; padding-left:0!important; padding-right:0!important;">Salva le info di accesso? </label>
             </div>
         </div>
-        <div class="col-sm">
-            <button type="submit" name="type_json" id="type_json" class="col-sm">
-                <i class="bi bi-filetype-json"></i>
-            </button>
-        </div>
     </form>
 </div>
 

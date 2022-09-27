@@ -5,9 +5,8 @@ class Register extends Main
     public $table_fields = array();
     function __construct() {
         parent::__construct("Register", "register");
-        // $this->setDeletable(true);
-
-        $this->setQuery("SELECT *, (SELECT name FROM employees WHERE id = cod_employees) as employee, (SELECT name FROM projects WHERE id = cod_projects) as project FROM register");
+        
+        $this->setQuery("SELECT hours, (SELECT name FROM employees WHERE id = cod_employees) as employee, (SELECT name FROM projects WHERE id = cod_projects) as project FROM register");
 
         
         $temp = array();
